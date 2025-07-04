@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 QuizCache
 
-## Getting Started
+**QuizCache** is an open source platform to help students prepare for exams by giving them free access to a growing repository of past papers.  
+Students can upload their old exams, browse papers from other schools and courses, and even request papers they need — all to help each other succeed.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+✅ Upload past exam papers (PDF) with metadata like school, subject, course code, year, and professor.  
+✅ Browse and search a library of past papers by school, subject, or semester.  
+✅ Request papers you couldn’t find — let the community help.  
+✅ See trending papers and most requested papers.  
+✅ 100% free and student-driven.
+
+---
+
+## 🚀 Getting Started
+
+### 🛠 Requirements
+
+- Node.js (v18 or above)
+- npm or yarn
+
+### 🔧 Installation
+
+```bash
+git clone https://github.com/your-username/quizcache.git
+cd quizcache
+npm install
+# or
+yarn install
+````
+
+### 🚀 Running the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the app at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contributing
 
-## Learn More
+We welcome contributions from anyone!
+Whether it’s fixing a bug, adding a feature, or improving documentation — pull requests are appreciated.
 
-To learn more about Next.js, take a look at the following resources:
+### 📌 How to contribute
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Fork this repository
+2. Create a new branch: `git checkout -b feature/my-feature`
+3. Commit your changes: `git commit -m "Add my feature"`
+4. Push to your branch: `git push origin feature/my-feature`
+5. Open a pull request
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📬 Contact & Community
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Questions or suggestions? Join us online or send us an email.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* 📧 Email: [support@quizcache.com](mailto:support@quizcache.com)
+* 💬 [Discord](https://discord.gg/)
+* 🐦 [X (Twitter)](https://x.com/)
+* 📸 [Instagram](https://instagram.com/)
+* 📘 [Facebook](https://facebook.com/)
+* 💬 [Reddit](https://reddit.com/r/)
+* 🎵 [TikTok](https://tiktok.com/)
+
+---
+
+## ⚖️ License
+
+This project is open source under the [MIT License](LICENSE).
+
+---
+
+## ⭐️ Support the project
+
+If you find this helpful, consider starring the repo ⭐ on GitHub or sharing it with friends who might benefit!
+
+```
