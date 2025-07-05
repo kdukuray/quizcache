@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import PapersTable from "@/custom_components/PapersTables";
 
 interface TrendingPaper {
   id: number;
@@ -65,49 +66,7 @@ export default function Trending() {
       </header>
 
       <div className="max-w-4xl mx-auto mt-14">
-        <h3 className="text-2xl font-semibold text-blue-700 mb-4">
-          Popular Right Now
-        </h3>
-
-        <div className="overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
-          <table className="min-w-full divide-y divide-gray-200 table-auto">
-            <thead className="bg-blue-50">
-              <tr>
-                {["School", "Subject", "Course Code", "Year", "Semester"].map((col) => (
-                  <th
-                    key={col}
-                    className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
-                  >
-                    {col}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-100">
-              {trendingPapers.map((paper) => (
-                <tr key={paper.id} className="hover:bg-gray-50 transition">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.school}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.subject}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.courseCode}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.year}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.semester}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-       
+        <PapersTable papers={trendingPapers} title="Trending Papers"></PapersTable>
       </div>
     </div>
   );

@@ -83,4 +83,3 @@ This project is open source under the [MIT License](LICENSE).
 
 If you find this helpful, consider starring the repo ⭐ on GitHub or sharing it with friends who might benefit!
 
-```

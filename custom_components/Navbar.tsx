@@ -13,7 +13,7 @@ export default function Navbar(){
             </Link>
         </div>
         <div className="flex flex-row justify-between items-center text-md w-3/5">
-            <Link href="#" className="text-md">Browse</Link>
+            <Link href="/search" className="text-md">Search</Link>
             <Link href="/upload-paper">Upload</Link>
             <Link href="/requests">Requests</Link>
             <Link href="/trending">Trending</Link>
