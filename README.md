@@ -25,7 +25,7 @@ Students can upload their old exams, browse papers from other schools and course
 ### 🔧 Installation
 
 ```bash
-git clone https://github.com/your-username/quizcache.git
+git clone https://github.com/kdukuray/quizcache.git
 cd quizcache
 npm install
 # or
