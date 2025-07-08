@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import PapersTable from "@/custom_components/PapersTables";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabaseClient";
+import { useEffect, useState } from "react";
+import { PostgrestError } from "@supabase/supabase-js";
+
 
 interface Paper {
   id: number | string;
@@ -16,19 +20,20 @@ interface Paper {
 export default function Home() {
 
   const router = useRouter()
+  const [recentPapers, setRecentPapers] = useState<Paper[]>([]) 
 
-  const singlePaper: Paper = {
-    id: 1,
-    school: "CCNY",
-    year: "2025",
-    semester: "spring",
-    subject: "physics",
-    courseCode: "phy20800",
-  }
+  // const singlePaper: Paper = {
+  //   id: 1,
+  //   school: "CCNY",
+  //   year: "2025",
+  //   semester: "spring",
+  //   subject: "physics",
+  //   courseCode: "phy20800",
+  // }
 
 
 
-  const recentPapers: Paper[] = [singlePaper]
+  // const recentPapers: Paper[] = [singlePaper]
 
   function toTitleCase(str: string) {
     return str.replace(
@@ -40,6 +45,31 @@ export default function Home() {
   function navigateTo(link: string) {
     router.push(link)
   }
+
+async function getLatestExams() {
+  const { data, error } = await supabase
+    .from('exam')
+    .select('id, school, subject, courseCode, year, semester')
+    .limit(10)
+    .order('created_at', { ascending: false });
+
+  if (data && !error) {
+  
+    setRecentPapers(data as Paper[]);
+    console.log(data);
+  }
+}
+
+
+  useEffect(()=>{
+    // fetch the most recent exam entries in the database
+    getLatestExams()
+    .then(()=>{
+      console.log("Function ran")
+    })
+  
+
+  }, [])
 
   return (
     <div className="">
