@@ -1,5 +1,9 @@
+"use client";
 import { Paper } from "@/types/paper"
+import Link from "next/link"
+import { useRouter } from "next/navigation";
 export default function PapersTable({papers, title}: {papers: Paper[], title: string}){
+  const router = useRouter();
 
     if (papers.length == 0){
         const empty_paper: Paper = {
@@ -36,23 +40,26 @@ export default function PapersTable({papers, title}: {papers: Paper[], title: st
 
             <tbody className="bg-white divide-y divide-gray-100">
               {papers.map((paper) => (
-                <tr key={paper.id} className="hover:bg-gray-50 transition">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.school}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.subject}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.courseCode? paper.courseCode : ""}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.year}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.semester? paper.semester : ""}
-                  </td>
-                </tr>
+                  <tr key={paper.id} className="hover:bg-gray-50 transition cursor-pointer"
+                  onClick={() => router.push(`/paper/${paper.id}`)}
+                  >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {paper.school}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {paper.subject}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {paper.courseCode? paper.courseCode : ""}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {paper.year}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {paper.semester? paper.semester : ""}
+                      </td>
+                  </tr>
+                
               ))}
             </tbody>
           </table>
