@@ -16,7 +16,7 @@ export default function Navbar(){
             <Link href="/search" className="text-md">Search</Link>
             <Link href="/upload-paper">Upload</Link>
             <Link href="/requests">Requests</Link>
-            <Link href="/trending">Trending</Link>
+            {/* <Link href="/trending">Trending</Link> */}
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
         </div>

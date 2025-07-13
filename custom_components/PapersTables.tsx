@@ -1,16 +1,9 @@
-interface Paper {
-  id: number | string;
-  school: string;
-  subject: string;
-  courseCode: string;
-  year: string;
-  semester: string;
-}
+import { Paper } from "@/types/paper"
 export default function PapersTable({papers, title}: {papers: Paper[], title: string}){
 
     if (papers.length == 0){
         const empty_paper: Paper = {
-            id: "",
+            id: 99, 
             school: "",
             subject: "",
             courseCode: "",
@@ -51,13 +44,13 @@ export default function PapersTable({papers, title}: {papers: Paper[], title: st
                     {paper.subject}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.courseCode}
+                    {paper.courseCode? paper.courseCode : ""}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                     {paper.year}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                    {paper.semester}
+                    {paper.semester? paper.semester : ""}
                   </td>
                 </tr>
               ))}
